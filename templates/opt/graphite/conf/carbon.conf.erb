@@ -38,7 +38,7 @@ PID_DIR = <%= scope.lookupvar('graphite::gr_storage_dir') %>
 <% end -%>
 
 # Enable daily log rotation. If disabled, a kill -HUP can be used after a manual rotate
-ENABLE_LOGROTATION = True
+ENABLE_LOGROTATION = <%= scope.lookupvar('graphite::gr_carbon_log_rotate') %>
 
 # Specify the user to drop privileges to
 # If this is blank carbon runs as the user that invokes it
@@ -260,7 +260,7 @@ ENABLE_TAGS = False
 <%end; end -%>
 [relay]
 # Enable daily log rotation. If disabled, a kill -HUP can be used after a manual rotate
-ENABLE_LOGROTATION = True
+ENABLE_LOGROTATION = <%= scope.lookupvar('graphite::gr_carbon_log_rotate') %>
 
 # Specify the user to drop privileges to
 # If this is blank carbon runs as the user that invokes it
